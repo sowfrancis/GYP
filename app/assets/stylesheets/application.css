@@ -1,0 +1,150 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+p{
+	color: #fff;
+}
+.event{
+	background-color: #2B2065;
+	border-radius: 0 0 5px;
+	opacity: 0.8;
+	color: #fff;
+	height: 200px;
+	max-height: 300px;
+	overflow: hidden;
+	width : 75%;
+	margin-top:20px;
+	margin:20px auto;
+	padding: 10px;
+
+}
+.description p{
+	max-height: 200px;
+	overflow: hidden;
+}
+.event h3{
+	font-size: 150%; 
+	/*float: right;*/
+	color: #45E4D1;
+	text-transform: capitalize;
+}
+.event h3:before{
+}
+.datetime{
+	float: right;
+	text-transform: capitalize;
+}
+body{
+	background-size: cover;
+	background-image: url('http://www.bonnesortie.fr/uploads/image-07-02-2015-17-12-20.jpg');
+}
+.details{
+	float: right;
+}
+
+
+/*pages sign up devise*/
+
+.login{
+	width: 100%;
+}
+.connecter{
+	margin: 30px auto;
+  width: 50%;
+  background-color: #2B2065;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+.connecter h2{
+	color: #fff;
+}
+label{
+	color: #989696;
+}
+
+/*page show events*/
+
+.event_title{
+	color: #fff;
+	text-align: center;
+	height: 50px;
+	width: 75%;
+	margin: auto;
+	margin-bottom: 10px;
+}
+.event_title h3{
+	font-weight: 80;
+	font-size: 50px;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+
+.event_right h5{
+	background-color: #2B2065;
+	opacity: 0.8;
+	/*margin: 0 4px;*/
+	color: #fff;
+	padding: 5px;
+	text-align: center;
+	border-radius: 0 0 3px;
+}
+
+.event_center{
+	background-color: #2B2065;
+	;
+	border-radius: 0 0 3px;
+}
+.event_left, .event_center{
+	margin-top: 4px;
+	opacity: 0.8;
+}
+
+.event_left div{
+	background-color: #2B2065;
+	padding: 5px 10px;
+	border-radius: 0 0 3px;
+
+	
+}
+.event_left div h5, .event_center h5{
+	color: #fff;
+}
+
+button{
+
+}
+
+
+/*.event_body p{
+	background-color: #2B2065;
+	opacity: 0.8;
+	margin-top: 10px;
+}
+/*.event_owner p{
+	background-color: #2B2065;
+	text-align: center;
+	padding: 10px;
+}
+/*.event_owner{
+	margin-top: 10px;
+	opacity: 0.8; 
+	background-color: #2B2065;
+	
+}

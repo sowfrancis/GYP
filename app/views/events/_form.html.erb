@@ -1,0 +1,46 @@
+<div class= "connecter">
+	<h2>Créer un événement</h2>
+<%= form_for @event do |e| %>
+	<div class="field">
+		<%= e.label :name %>
+		<%= e.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= e.label :venue %>
+		<%= e.text_field :venue %>
+	</div>
+
+	<div class="field">
+		<%= e.label :description %>
+		<%= e.text_area :description %>
+	</div>
+
+	<div class="field">
+		<%= e.label :address %>
+		<%= e.text_field :address %>
+	</div>
+
+	<div class="field">
+		<%= e.label :event_date %>
+		<%= e.date_field :event_date %>
+	</div>
+
+	<div class="field">
+		<%= e.label :hour %>
+		<%= e.text_field :hour %>
+	</div>
+
+	<div class="field">
+		<%= e.label :places %>
+		<%= e.text_field :places %>
+	</div>
+
+	<%= e.hidden_field :user_id, :value => current_user.id %>
+
+	<div class= "button">
+		<%= e.submit "Créer un event" %>
+	</div>
+
+<% end %>
+</div>
