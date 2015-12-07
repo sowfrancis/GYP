@@ -1,0 +1,19 @@
+<div class= "new_comment">
+
+<%= form_for @comment do |f| %>
+	
+	<div class="field">
+	  <%= f.label 'commentaire' %>
+   <%= f.text_area :body, size: "20x10" %>
+	</div>
+
+	<div class="actions">
+	  <%= f.submit 'Poster un commentaire' %>
+	</div>
+
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+
+	<%= f.hidden_field :event_id %>
+
+<% end %>
+</div>

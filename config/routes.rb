@@ -1,12 +1,25 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  resources :users
-  resources :events
+  
+  resources :users 
+  
+  resources :events 
+    
+  resources :comments 
+  
   resources :participations
+  
   root 'events#index'
+  
   get 'users/:id/' => 'users#show', as: 'user_show'
-  post 'events/:id/' => 'events#participate', as: 'participate_event'
+  
+  post '/participations/create' => 'participations#create', as: :create_participation
+
+  post '/participations/delete' => 'participations#delete', as: :delete_participation
+  
+  post 'events/:id/' => 'events#destroy', method: :delete, as: 'delete_event' 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

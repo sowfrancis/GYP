@@ -11,13 +11,13 @@ User.create(
 
 	[	
 
-		{ first_name: 'Syyrius', 
+		{ first_name: 'Laura', 
 
-			last_name: 'Jio', 
+			last_name: 'Ingalls', 
 
 			gender: 'M',
 
-			email: 'xx@xxxx.com', 
+			email: 'la@gmail.com', 
 
 			password: '11111111', 
 
@@ -38,7 +38,7 @@ User.create(
 
 			gender: 'F',
 
-			email: 'ii@iiii.com', 
+			email: 'ma@gmail.com', 
 
 			password: '11111111', 
 
@@ -60,7 +60,7 @@ User.create(
 
 			gender: 'M',
 
-			email: 'jj@jjjjj.com', 
+			email: 'al@gmail.com', 
 
 			password: '11111111', 
 
@@ -104,11 +104,11 @@ Event.create(
 
 	[	
 
-		{ name: 'la petite',  
+		{ name: 'La petite maison dans la prairie ',  
 
-			venue: 'douala',
+			venue: 'michigan',
 
-			description: 'collé la petite', 
+			description: 'venez faire la fète avec laura et sa famille', 
 
 			address: '5 rue du petit pays', 
 
@@ -120,7 +120,7 @@ Event.create(
 
 			places: '400',
 
-			user_id: '1'
+			user_id: '1',
 			
 
 		}
@@ -136,7 +136,7 @@ Event.create(
 
 		{ name: 'le rancho',  
 
-			venue: 'abidjan',
+			venue: 'Royan',
 
 			description: 'soirée coupé', 
 
@@ -157,5 +157,7 @@ Event.create(
 	]
 
 )
+
+
 
 

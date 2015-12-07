@@ -1,9 +1,14 @@
 <div class= "connecter">
 	<h2>Créer un événement</h2>
-<%= form_for @event do |e| %>
+<%= form_for @event, html: {multipart: :true} do |e| %>
 	<div class="field">
 		<%= e.label :name %>
 		<%= e.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= e.label :avatar %>
+		<%= e.file_field :avatar%>
 	</div>
 
 	<div class="field">
@@ -35,6 +40,12 @@
 		<%= e.label :places %>
 		<%= e.text_field :places %>
 	</div>
+
+	<div class="field">
+		<%= e.label :cost %>
+		<%= e.text_field :cost %>
+	</div>
+
 
 	<%= e.hidden_field :user_id, :value => current_user.id %>
 

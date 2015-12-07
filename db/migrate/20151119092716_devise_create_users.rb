@@ -5,7 +5,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :gender, :limit => 1
       t.datetime :birthdate
-      t.string  :image_profile
       t.string :town
       t.string :address
       t.boolean :is_admin

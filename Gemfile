@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem "paperclip", "~> 4.3"
+
+gem 'pry-rails'
+
 gem 'foundation-rails'
 
 gem 'fastercsv' # Only required on Ruby 1.8 and below 

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119142711) do
+ActiveRecord::Schema.define(version: 20151206171638) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["event_id"], name: "index_comments_on_event_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -23,8 +34,12 @@ ActiveRecord::Schema.define(version: 20151119142711) do
     t.integer  "cost"
     t.integer  "places"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id"
@@ -41,7 +56,6 @@ ActiveRecord::Schema.define(version: 20151119142711) do
     t.string   "last_name"
     t.string   "gender",                 limit: 1
     t.datetime "birthdate"
-    t.string   "image_profile"
     t.string   "town"
     t.string   "address"
     t.boolean  "is_admin"

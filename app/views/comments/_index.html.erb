@@ -1,0 +1,10 @@
+<div class="comment_all">
+	<% @comments.each do |comment| %>
+  		<b><%= find_email(comment.user_id) %>:</b>
+    	<br />
+    	<p><%= comment.body %></p>
+    	<p><%= time_ago_in_words(comment.created_at)%></p>
+    	<p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    	<hr/>
+	<% end %>
+</div>

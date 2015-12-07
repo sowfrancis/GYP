@@ -1,51 +1,67 @@
-
-<div class ="event_title">
-	<h3><%= @event.name %></h3>
-</div>
-
-
-<%= @price %>
- 
-
-<div class="row">
-	<div class =" event_left small-3 medium-3 columns">
-	<div>
-		<h5>
-		
-			Organisateur:<%= @event.user.first_name %> <%= @event.user.last_name %>
-		</h5>
-
-	<h5>
-		Date:<%= @event.event_date %> | Heure: <%= @event.hour %>
-	</h5>
-
-	<h5>
-		Adresse:<%= @event.address %>
-	</h5>
-
-	<h5>
-		Lieu:<%= @event.venue %>
-	</h5>
-
-	<h5>
-		Participants: <%= @event.participations.count %> / <%= @event.places %>
+<div class ="row">
+	<div class ="event_title ">
+		<h3><%= @event.name %></h3>
 	</div>
+</div>
+<div class="row">
+	<div class =" event_left small-3 columns">
+		<div>
+			<h5>
+				Organisateur:<%= find_email(@event.user_id) %> 
+			</h5>
+			<h5>
+				<% if @event.event_date.blank? %>
+						<%= "Date non déterminé" %>
+				<% else %>
+						Date:<%= @event.event_date.strftime("%d/%m/%Y") %> | Heure: <%= @event.hour %>
+				<% end %>
+			</h5>
+			<h5>Adresse:<%= @event.address %></h5>
+			<h5>Lieu:<%= @event.venue %></h5>
+
+			<h5>Participants: <%= @event.participations.count %> / <%= @event.places %></h5>
+		</div>
 	</div>
 	
-	<div class ="event_center small-6 medium-6 columns"><h5>Description:</h5>
+	<div class ="event_center small-6 columns">
+
+		<div class ="imag_show">
+			<%= image_tag @event.avatar.url(:medium) %>
+		</div>
+
+
+		<h5>Description:</h5>
 		<p>
 			<%= @event.description %>
-			Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
+			Nec minus feminae quoque calamitatum participes fuere similium. nam ex hoc quoque sexu peremptae sunt originis altae conplures, adulteriorum flagitiis obnoxiae vel stuprorum. inter quas notiores fuere Claritas et Flaviana, quarum altera cum duceretur ad mortem, indumento, quo vestita erat, abrepto, ne velemen quidem secreto membrorum sufficiens retinere permissa est. ideoque carnifex nefas admisisse convictus inmane, vivus exustus est.
 		</p>
 	</div>
 	
-	<div class="event_right small-3 medium-3 columns">
-	<h5>Participation: <%= @event.cost %>€</h5>
-	<h5><%= link_to 'Participer', participate_event_path, method: :post %></h5>
-	</div>
+	<div class="event_right small-3 columns">
+		<h5>Participation: <%= @event.cost %>€</h5>
+		<% if current_user.participations.where(event_id: @event.id) != [] %>
+		<h5><%= link_to 'je ne Participe plus', delete_participation_path(@event.id), method: :post %></h5>
+		<%else%>
+		<h5><%= link_to 'Participer', create_participation_path(@event.id), method: :post %></h5>
+		<% end %>
+
+		<h5><%= link_to 'Effacer soirée', delete_event_path, method: :delete %></h5>
+
+		<% if current_user.id == @event.user_id %>
+		<h5><%= link_to 'Editer un évenement', edit_event_path %></h5>
+		<% else %>
+				
+		<% end %>
+
+		<%= render 'comments/new' %>
+
+		<%= render 'comments/index'%>
+
+  </div>
 </div>
 
-</div>
+
+
 
 
 

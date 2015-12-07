@@ -15,7 +15,7 @@
       <li class="has-dropdown">
         <a href="#"></a>
         <ul class="">
-          <li><%= link_to 'Editer mon profil' %></li>
+          <li><%= link_to 'Editer mon profil', edit_event_path(current_user)  %></li>
           <li class="active"><%= link_to 'deconnexion', destroy_user_session_path, method: :delete %></li>
         </ul>
       </li>
