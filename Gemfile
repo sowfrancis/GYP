@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'factory_girl'
+
+gem "capybara"
+
+gem 'rspec-rails'
+
 gem "paperclip", "~> 4.3"
 
 gem 'pry-rails'
